@@ -1,0 +1,42 @@
+<section class="rounded border border-green-700 m-14 mx-auto p-6 md:w-1/2">
+  <h1 class="text-2xl text-green-600 mb-4">Register</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="formSubmit()">
+
+
+    <app-input  [control]="registerForm.get('name')" [typeInput]=" 'text' "  [idInput]=" 'name' "  [labelInput]=" 'Name' " ></app-input>
+
+    <app-input  [control]="registerForm.get('email')" [typeInput]=" 'email' "  [idInput]=" 'email' "  [labelInput]=" 'Email' " ></app-input>
+
+    <app-input  [control]="registerForm.get('password')"   [idInput]=" 'password' "  [labelInput]=" 'Password' " >
+       Min 8 chars, 1 uppercase, 1 lowercase & 1 number
+    </app-input>
+
+
+
+
+
+    <app-input  [control]="registerForm.get('rePassword')"  [idInput]=" 'rePassword' "  [labelInput]=" 'RePassword' " >
+
+    </app-input>
+
+
+
+
+    <app-input  [control]="registerForm.get('phone')" [typeInput]=" 'tel' "  [idInput]=" 'phone' "  [labelInput]=" 'Phone' " >
+      Accept only Egypt phone number
+    </app-input>
+
+    <button class="btn-register w-full text-white bg-green-600 hover:bg-green-200 hover:text-green-800  " type="submit">
+      Submit
+      @if (isLoading) {
+      <span> <i class="fas fa-spinner fa-spin"></i> </span>
+
+      }
+
+    </button>
+    @if (msgError) {
+      <p class="text-red-600 text-center mt-1 bg-red-300 p-2"> {{msgError}} </p>
+    }
+
+  </form>
+</section>

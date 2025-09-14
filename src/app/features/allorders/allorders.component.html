@@ -1,0 +1,20 @@
+<section class=" py-22">
+  <h1 class="text-center text-5xl  text-green-600 my-4">All Orders</h1>
+  <div class="container grid md:grid-cols-2 gap-10">
+    @for (item of ordersList; track item.product._id) {
+      <div class="bg-white p-2 rounded shadow space-x-3 my-3 grid sm:grid-cols-12">
+        <div class="col-span-1">
+          <img [src]="item.product.imageCover" class="w-full" [alt]="item.product.title">
+        </div>
+        <div class="col-span-11 flex items-center justify-between">
+          <h2> {{item.product.title}} </h2>
+
+          <span> {{item.count}} </span>
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+</section>

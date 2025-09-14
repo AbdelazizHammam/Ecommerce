@@ -1,0 +1,51 @@
+<section class="bg-white py-22">
+  <h1 class="text-3xl text-center font-extrabold text-green-500 mb-6">Brands</h1>
+
+  <div class="container grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+    @for (brand of brandsList; track brand._id) {
+      <div
+        class="main bg-white border rounded border-gray-200 shadow-xl flex justify-center flex-wrap items-center cursor-pointer"
+        (click)="getBrand(brand._id)">
+        <img style="height: 300px;" [src]="brand.image" [alt]="brand.name" class="w-full">
+        <h2 class="p-4 text-green-900 text-3xl">{{ brand.name }}</h2>
+      </div>
+    }
+  </div>
+
+  @if (isModalOpen) {
+    <!-- Main modal -->
+    <div id="default-modal" tabindex="-1"
+      class="fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black/40">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+          <!-- Modal header -->
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+            <button (click)="closeModal()" type="button"
+              class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center">
+              ×
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="p-4 md:p-5 flex justify-center items-center">
+            <div class="side-left w-1/2">
+              <h1 class="text-5xl text-green-700 mb-3">{{ brandDetail?.name }}</h1>
+              <p class="text-gray-400">{{ brandDetail?.slug }}</p>
+            </div>
+            <div class="side-right w-1/2">
+              <img [src]="brandDetail?.image" class="w-full" [alt]="brandDetail?.name">
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b">
+            <button (click)="closeModal()" type="button"
+              class="py-2.5 px-5 text-sm font-medium text-white bg-black rounded-lg hover:bg-gray-600">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</section>

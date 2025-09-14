@@ -1,0 +1,13 @@
+
+@import '../../../../styles.scss';
+
+
+.btn-main {
+  background-color: $main-color;
+  padding: 7px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}

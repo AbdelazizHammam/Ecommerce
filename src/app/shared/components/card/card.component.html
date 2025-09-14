@@ -1,0 +1,47 @@
+
+<div class="card   overflow-hidden rounded    group/card relative">
+            <div [routerLink]="['/details',product.slug,product._id]" class="cursor-pointer">
+                    <div class="card-img">
+        <img [src]="product.imageCover"  height="200px" class="w-full " [alt]="product.title" />
+      </div>
+      <div class="card-body h-[100px] px-2 py-4">
+        <h4 class="text-green-500 text-xs">{{product.category.name}}</h4>
+
+          <h3 class="font-medium">{{product.title.split(' ',3).join(' ') }}</h3>
+
+
+
+        <div class="flex justify-between items-center">
+          <span>{{product.price}}</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-300"></i>
+            <span class="text-gray-500">{{product.ratingsAverage}}</span>
+          </div>
+        </div>
+      </div>
+            </div>
+    <button
+    (click)="addItemToCart(product._id)"
+        class=" disabled:bg-gray-500 disabled:cursor-not-allowed bg-green-600 grouphover px-6 py-2 rounded border text-white my-1 block w-[95%] mx-auto  hover:bg-green-900  transtion-all duration-300 cursor-pointer translate-y-[120%] group-hover/card:translate-y-0 cursor-pointer "
+      >
+        Add to cart
+      </button>
+
+      <div class="wishlist absolute end-[10px] bottom-[105px]">
+          <span  (click)="toggleWishList(product._id)"  >
+              @if (flag) {
+                <i class="fas fa-heart text-3xl cursor-pointer " ></i>
+              }@else {
+                <i class="fas fa-heart text-3xl cursor-pointer text-red-500" ></i>
+              }
+
+
+
+
+
+
+              </span>
+
+      </div>
+
+    </div>

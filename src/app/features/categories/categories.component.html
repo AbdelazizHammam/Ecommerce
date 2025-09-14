@@ -1,0 +1,15 @@
+<section class="bg-white py-22">
+  <h1 class="text-3xl text-center font-extrabold text-green-500 mb-6">Categories</h1>
+
+  <div class="container grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5">
+ @for (item of categoriesList; track item._id) {
+      <div  class=" main bg-white border rounded  border-gray-200 shadow-xl  flex justify-center flex-wrap items-center   cursor-pointer ">
+    <img style="height: 300px;" [src]="item.image" [alt]="item.name" class=" w-full object-cover ">
+    <h2 class="p-4  text-green-900  text-3xl">{{item.slug}}  </h2>
+  </div>
+
+
+}
+</div>
+
+</section>

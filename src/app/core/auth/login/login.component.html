@@ -1,0 +1,32 @@
+<section class="rounded border border-green-700 m-25 mx-auto p-6  md:w-1/2">
+  <h1 class="text-2xl text-green-600 mb-4">Register</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="formSubmit()">
+
+
+
+
+
+
+  <app-input  [control]="loginForm.get('email')"  [typeInput]=" 'email' "  [idInput]=" 'email' " [labelInput]=" 'Email' "    ></app-input>
+  <app-input  [control]="loginForm.get('password')"    [idInput]=" 'password' " [labelInput]=" 'Password' "    >
+    Min 8 chars, 1 uppercase, 1 lowercase & 1 number
+  </app-input>
+
+  <a class="text-sky-600 font-thin cursor-pointer tracking-widest " routerLink="/forgot" > Forgot Password ?</a>
+
+    <button  class="btn-register w-full text-white bg-green-600 hover:bg-green-200 hover:text-green-800 my-4  " type="submit">
+      Submit
+      @if (isLoading) {
+      <span> <i class="fas fa-spinner fa-spin"></i> </span>
+
+      }
+
+    </button>
+  <a class="text-sky-600 font-thin cursor-pointer  tracking-widest " routerLink="/register" > <span class="text-sm text-red-500 font-semibold">New user ?</span> Register</a>
+
+    @if (msgError) {
+      <p class="text-red-600 text-center mt-1 bg-red-300 p-2"> {{msgError}} </p>
+    }
+
+  </form>
+</section>

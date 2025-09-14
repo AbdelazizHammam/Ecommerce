@@ -1,0 +1,22 @@
+<section class="py-22">
+  <div class="container">
+    <h2 class="text-center text-4xl">Product Details:</h2>
+    <div class="grid sm:grid-cols-12 items-center">
+      <div class="col-span-3">
+        <img [src]="productDetails.imageCover" class="w-full" [alt]="productDetails.title">
+      </div>
+      <div class="col-span-9 ms-4">
+        <h2 class="text-2xl"> {{productDetails.title }} </h2>
+        <p class="text-gray-700 text-sm my-3 "> {{productDetails.description}}  </p>
+        <span> {{productDetails.category?.name}}  </span>
+        <div class="flex justify-between items-center">
+        <span> {{productDetails.price}} </span>
+        <span> <i class="fas fa-star text-yellow-500"></i> {{productDetails.ratingsAverage}} </span>
+      </div>
+
+      <button (click)="addItemToCart(productDetails._id)" class=" cursor-pointer disabled:bg-gray-500 disabled:cursor-not-allowed bg-green-600 grouphover px-6 py-2 rounded border text-white my-1 block w-full mx-auto  hover:bg-green-900  transtion-all duration-300">Add To Cart</button>
+      </div>
+
+    </div>
+  </div>
+</section>
