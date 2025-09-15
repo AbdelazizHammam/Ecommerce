@@ -15,3 +15,10 @@ export class ProductsService {
     return this.httpClient.get( environment.baseUrl + `products?page=${pageNumer}`)
   }
 }
+
+
+
+
+
+
+
