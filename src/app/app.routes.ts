@@ -87,18 +87,21 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/details/details.component').then(c => c.DetailsComponent),
         title: 'Details Page',
+      
       },
       {
         path: 'details/:id',
         loadComponent: () =>
           import('./features/details/details.component').then(c => c.DetailsComponent),
         title: 'Details Page',
+      
       },
       {
         path: 'checkout/:id',
         loadComponent: () =>
           import('./features/checkout/checkout.component').then(c => c.CheckoutComponent),
         title: 'Checkout Page',
+      
       },
     ],
   },
