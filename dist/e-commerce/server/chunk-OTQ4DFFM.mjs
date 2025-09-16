@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Bb as e,Cb as m,Db as s,bb as t}from"./chunk-6DECXFDM.mjs";import"./chunk-X2SEQXRR.mjs";var i=class n{static \u0275fac=function(o){return new(o||n)};static \u0275cmp=t({type:n,selectors:[["app-notfound"]],decls:3,vars:0,consts:[[1,"py-14","min-h-screen"],[1,"img-notfound","w-1/2","mx-auto"],["src","/imgs/error.svg","alt","not-found",1,"w-full"]],template:function(o,f){o&1&&(e(0,"section",0)(1,"div",1),s(2,"img",2),m()())},encapsulation:2})};export{i as NotfoundComponent};
